@@ -17,7 +17,7 @@ class BookingListAPI(generics.ListAPIView):
                 flat=OuterRef('flat'),
                 checkin__lt=OuterRef('checkin'),
             )
-            .order_by('checkin')
+            .order_by('-checkin')
             .values('id')[:1]
         )
 
