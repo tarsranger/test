@@ -5,7 +5,6 @@ from .serializers import BookingSerializer
 
 
 class BookingListAPI(generics.ListAPIView):
-    queryset = Booking.objects.all()
     serializer_class = BookingSerializer
     filter_backends = [filters.OrderingFilter]
     ordering_fields = ['flat', 'checkin']
